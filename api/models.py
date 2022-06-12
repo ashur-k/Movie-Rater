@@ -4,6 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Movie(models.Model):
+
     title = models.CharField(max_length=32)
     description = models.TextField(max_length=360)
 
@@ -24,6 +25,7 @@ class Movie(models.Model):
 
 
 class Rating(models.Model):
+
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     stars = models.IntegerField(
